@@ -10,7 +10,7 @@ const Details = () => {
     let id = pathToArray[2]
     const fetchApi = async()=>{
         try {
-         const res = await axios.get(`http://localhost:8000/${id}`)
+         const res = await axios.get(`http://localhost:8000/api/${id}`)
          setDetails(res.data)
         } catch (error) {
             

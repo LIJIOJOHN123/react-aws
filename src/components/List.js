@@ -30,7 +30,7 @@ const List = () => {
   }
   
   const handleSubmit = async()=>{
-    await axios.post("http://localhost:8000/task", formData,{ headers: {"Authorization" : `Bearer ${token}`} })
+    await axios.post("http://localhost:8000/api/task", formData,{ headers: {"Authorization" : `Bearer ${token}`} })
     setFormData({
         title:"",
         description:""
@@ -43,7 +43,7 @@ const List = () => {
     setEditMode(true)
   }
   const handleEditSubmission = async()=>{
-    await axios.put(`http://localhost:8000/task/${id}`, formData)
+    await axios.put(`http://localhost:8000/api/task/${id}`, formData)
     setFormData({
         title:"",
         description:""
@@ -53,7 +53,7 @@ const List = () => {
 
   }
   const hanldeDelete = async(task)=>{
-    await axios.delete(`http://localhost:8000/task/${task._id}`)
+    await axios.delete(`http://localhost:8000/api/task/${task._id}`)
     await fetchApi()
   }
   const user = JSON.parse(localStorage.getItem("user"))

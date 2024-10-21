@@ -15,7 +15,7 @@ const Register = () => {
     const handleRegister = async()=>{
       let res
       try {
-       res = await axios.post("http://localhost:8000/register", formData)
+       res = await axios.post("http://localhost:8000/api/register", formData)
        console.log(res.request.response.message)
       } catch (error) {
         console.log(error)
